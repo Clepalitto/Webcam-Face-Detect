@@ -32,6 +32,8 @@ while True:
     # Draw a rectangle around the faces
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        # Write "face" on each rectangle for a bit more ux
+        cv2.putText(frame, "Face", (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
     if anterior != len(faces):
         anterior = len(faces)
